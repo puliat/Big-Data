@@ -4,7 +4,7 @@ import folium
 from streamlit_folium import folium_static
 
 # Load new_loc dataset
-new_loc = pd.read_csv("/Users/leonardo14/Desktop/BDS/dataset/full/new_loc.csv")  # Adjust the path as necessary
+new_loc = pd.read_csv("new_loc.csv")  # Adjust the path as necessary
 
 # Streamlit app title
 st.title("Charging Point Analysis")
