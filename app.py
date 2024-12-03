@@ -26,7 +26,7 @@ if st.sidebar.button("Get Details"):
     ]
 
     if not location_data.empty:
-        col1, col2 = st.columns([1.5, 2])  # Adjust the ratio as needed
+        col1, col2 = st.columns([2, 3])  # Adjust the ratio as needed
 
         with col1:
             # Points of Interest Section
