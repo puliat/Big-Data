@@ -6,13 +6,17 @@ from streamlit_folium import folium_static
 # Load new_loc dataset
 new_loc = pd.read_csv("new_loc.csv")  # Adjust the path as necessary
 
+new_loc['Coordinates'] = new_loc['Latitude'].astype(str) + ", " + new_loc['Longitude'].astype(str)
+coordinate_options = new_loc['Coordinates'].unique()
+
 # Streamlit app title
 st.title("Charging Point Analysis")
 
 # User input for latitude and longitude
 st.sidebar.header("User Input")
-latitude = st.sidebar.number_input("Enter Latitude:", format="%.6f")
-longitude = st.sidebar.number_input("Enter Longitude:", format="%.6f")
+selected_coordinates = st.sidebar.selectbox("Select a Location:", coordinate_options)
+
+latitude, longitude = map(float, selected_coordinates.split(", "))
 
 # Find the corresponding row in the new_loc dataset
 if st.sidebar.button("Get Details"):
