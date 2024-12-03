@@ -56,7 +56,7 @@ if st.sidebar.button("Get Details"):
             folium.Marker(location=map_center, popup="Selected Location").add_to(m)
 
             # Increase the size of the map
-            folium_static(m, width=700, height=600)
+            folium_static(m, width=700, height=580)
    
     else:
         st.error("No data found for the given coordinates.")
